@@ -39,6 +39,7 @@ int main(int argc, char** argv) {
 	glutSpecialFunc(KeyboardSpecial);
 	glutKeyboardFunc(KeyboardDown);
 
+	glEnable(GL_DEPTH_TEST);
 	glutDisplayFunc(display);
 	glutIdleFunc(update);
 	glutMainLoop();
