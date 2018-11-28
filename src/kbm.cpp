@@ -5,12 +5,18 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
-			// Do Stuff
+			if(x > 250) {
+				this->house.theta.x += 10.0;
+			}
+			else{
+				this->house.theta.y += 10.0;
+			}
+
 		}
 		break;
-	case GLUT_RIGHT_BUTTON:
+	case GLUT_MIDDLE_BUTTON:
 		if(state==GLUT_DOWN){
-			// Do Stuff
+			// Generate context Menu
 		}
 		break;
 	}
@@ -19,24 +25,24 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 void Viewpane::KeySpecial(int key, int x, int y) {
 	switch(key){
 	case GLUT_KEY_PAGE_UP: // Move camera closer to house
-		// Do Stuff
+		this->zoomScale += 5.0;
 		break;
 	case GLUT_KEY_PAGE_DOWN: // move camera further from house
-		// Do Stuff
+		this->zoomScale -= 5.0;
 		break;
 	}
 }
 
 void Viewpane::KeyDown(unsigned char key, int x, int y) { 
 	switch(key){
-	case 's': // Reset stop house animation
-		// Do Stuff
+	case 's': // Stop house animation
+		glutIdleFunc(NULL);
 		break;
 	case 'r': // Reset house position and size
 		// Do Stuff
 		break;
 	case 'R': // Reset house position, size, and camera position and perspective
-		// Do Stuff
+		this->zoomScale = 0;
 		break;
 	case 'q':
 		exit(0);

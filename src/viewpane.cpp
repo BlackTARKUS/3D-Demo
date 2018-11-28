@@ -15,7 +15,7 @@ void Viewpane::init(int window_width, int window_height) {
 
 void Viewpane::render() {
 
-	clearScreen();
+	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
 	// draw the Text
 	//for(unsigned i=0; i < this->text.size(); i++) {
@@ -30,5 +30,5 @@ void Viewpane::render() {
 	// Draw the House
     this->house.render();
 	
-	swapBuffers();
+	glutSwapBuffers();
 }

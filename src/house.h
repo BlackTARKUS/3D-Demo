@@ -8,7 +8,7 @@ class House {
 private:
 public:
 	vec3 pos; // position
-	float theta; // rotation
+	vec3 theta; // rotation angle
 	float alpha; // rotational velocity
 	std::vector<vec3> verts; // polygon vertices
 	

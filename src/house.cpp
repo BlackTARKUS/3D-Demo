@@ -68,4 +68,6 @@ void House::render() {
 		}
 		glEnd();
 	}
+
+	glutSwapBuffers();
 }

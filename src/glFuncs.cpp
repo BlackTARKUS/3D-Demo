@@ -21,11 +21,3 @@ void setupGL( int wdx, int wdy ) {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glPointSize(2.0);
 }
-
-void clearScreen( void ) {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  
-}
-
-void swapBuffers( void ) {
-	glutSwapBuffers();
-}
