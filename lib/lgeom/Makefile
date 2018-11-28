@@ -1,3 +1,4 @@
+
 CC       = gcc
 CXX      = g++
 CFLAGS   = -Wall
@@ -29,8 +30,6 @@ else
 	cp -r $(INCDIR)/* $(INCLUDEDEST)
 endif
 
-build: $(OBJECTS)
-
 $(TARGET): $(OBJECTS)
 	@mkdir -p $(BINDIR)
 	ar -rc $@ $^
@@ -42,14 +41,11 @@ $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 
 $(HEADERS): $(INCDIR)/lgeom/%.h : $(SRCDIR)/%.h
 	@mkdir -p $(INCDIR)/lgeom
-
-$(TESTOBJS): $(OBJDIR)/%.o : $(TESTDIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@ -I./$(TESTDIR) -I./$(INCDIR)
+	@sed -e "/^\/\/\/.*$$/d" $< >> $@
 
 clean:
 	rm -f $(OBJDIR)/*.o
 
-# purge everything that isn't sourcecode
 pristine: clean
 	rm -rf $(OBJDIR)
 	rm -f $(BINDIR)/*.out
@@ -57,5 +53,4 @@ pristine: clean
 	rm -f *.exe
 	rm -f $(BINDIR)/$(TARGET)
 	rm -rf $(BINDIR)
-	rm -f $(TESTDIR)/*.o
 	rm -rf $(INCDIR)/lgeom

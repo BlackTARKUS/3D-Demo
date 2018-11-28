@@ -2,7 +2,6 @@
 #include "glFuncs.h"
 #include "viewpane.h"
 
-
 // Specify the values to place and size the window on the screen
 const int WINDOW_POSITION_X = 500;
 const int WINDOW_POSITION_Y = 5;
