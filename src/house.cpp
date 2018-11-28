@@ -6,10 +6,6 @@ House::House() {
 
 // creating House with specified geometry
 House::House(vec3 position) : pos(position) {
-	this->vel = {0.0,0.0,0.0};
-
-	this->Tverts = verts;
-
 	// Bottom Face
 	this->verts.push_back( {-1.0, -1.0, 0.0} );
 	this->verts.push_back( {-1.0,  1.0, 0.0} );
@@ -46,6 +42,8 @@ House::House(vec3 position) : pos(position) {
 	this->verts.push_back( { 1.0,  1.0, 1.0} );
 	this->verts.push_back( { 1.0, -1.0, 1.0} );
 
+	// Define the default values of the transformation vertices
+	this->Tverts = verts;
 }
 
 // update House with new rotation direction

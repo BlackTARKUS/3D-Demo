@@ -20,6 +20,9 @@ void update( void ) {
 }
 
 // relay functions for key handling
+void MouseClicked(int button, int state, int x, int y) { 
+	v.MouseClicked(button, state, x, y); 
+}
 void KeyDown(unsigned char key, int x, int y) { v.KeyDown(key, x, y); }
 void KeySpecial(int key, int x, int y) { v.KeySpecial(key, x, y); }
 
@@ -35,8 +38,8 @@ int main(int argc, char** argv) {
 	v.init(WINDOW_MAX_X, WINDOW_MAX_Y);
 
 	glutMouseFunc(MouseClicked);
-	glutSpecialFunc(KeyboardSpecial);
-	glutKeyboardFunc(KeyboardDown);
+	glutSpecialFunc(KeySpecial);
+	glutKeyboardFunc(KeyDown);
 
 	glEnable(GL_DEPTH_TEST);
 	glutDisplayFunc(display);

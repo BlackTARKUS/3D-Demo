@@ -1,7 +1,8 @@
 #include <GL/glut.h>
+#include "viewpane.h"
 
-void Viewpane::MouseClicked(int button, int state, int x, int y){ 
-	switch(key){
+void Viewpane::MouseClicked(int button, int state, int x, int y) { 
+	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
 			// Do Stuff
@@ -15,7 +16,7 @@ void Viewpane::MouseClicked(int button, int state, int x, int y){
 	}
 }
 
-void Viewpane::KeySpecial(int key, int x, int y){
+void Viewpane::KeySpecial(int key, int x, int y) {
 	switch(key){
 	case GLUT_KEY_PAGE_UP: // Move camera closer to house
 		// Do Stuff
@@ -26,7 +27,7 @@ void Viewpane::KeySpecial(int key, int x, int y){
 	}
 }
 
-void Viewpane::KeyDown(unsigned char key, int x, int y){ 
+void Viewpane::KeyDown(unsigned char key, int x, int y) { 
 	switch(key){
 	case 's': // Reset stop house animation
 		// Do Stuff

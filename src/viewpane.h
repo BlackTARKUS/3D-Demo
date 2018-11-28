@@ -20,8 +20,8 @@ public:
 	void render();
 
 	void MouseClicked(int button, int state, int x, int y);
-	void KeyboardSpecial(int key, int x, int y);
-	void KeyboardDown(unsigned char key, int x, int y);
+	void KeySpecial(int key, int x, int y);
+	void KeyDown(unsigned char key, int x, int y);
 };
 
 #endif // VIEWPANE_H
