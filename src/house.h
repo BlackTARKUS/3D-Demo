@@ -11,8 +11,7 @@ public:
 	float theta; // rotation
 	float alpha; // rotational velocity
 	std::vector<vec3> verts; // polygon vertices
-	std::vector<vec3> Tverts; // transformed vertices
-
+	
 	House();
 	House(vec3 position);
 	void rotate(float,float,float,float);

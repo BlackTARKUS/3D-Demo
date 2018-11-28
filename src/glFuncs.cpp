@@ -14,11 +14,10 @@ void setupGlut( int wpx, int wpy, int wdx, int wdy ) {
 }
 
 void setupGL( int wdx, int wdy ) {
-	glMatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	// set viewport to be same dimensions as window
 	gluOrtho2D(0.0, wdx, 0.0, wdy);
-	glMatrixMode(GL_MODELVIEW);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glPointSize(2.0);
 }

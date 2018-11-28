@@ -42,8 +42,6 @@ House::House(vec3 position) : pos(position) {
 	this->verts.push_back( { 1.0,  1.0, 1.0} );
 	this->verts.push_back( { 1.0, -1.0, 1.0} );
 
-	// Define the default values of the transformation vertices
-	this->Tverts = verts;
 }
 
 // rotate House with new rotation direction
@@ -54,11 +52,20 @@ void House::rotate(float theta,float x,float y,float z) {
 	glPopMatrix();
 }
 
+// draw the House
 void House::render() {
-	// draw the House
-	glBegin(GL_POLYGON);
-	for(unsigned i=0; i < this->Tverts.size(); i++) {
-		glVertex3f(this->Tverts[i].x, this->Tverts[i].y, 0.0);
+
+	glPolygonMode(GL_FRONT, GL_FILL);
+	glPolygonMode(GL_BACK, GL_FILL);
+
+	for(unsigned j=0;j<this->verts.size();j++) {
+
+		glBegin(GL_POLYGON);
+		for(unsigned i=0;i<4;i++) {
+			glVertex3f(this->verts[i].x,
+					   this->verts[i].y,
+					   this->verts[i].z);
+		}
+		glEnd();
 	}
-	glEnd();
 }
