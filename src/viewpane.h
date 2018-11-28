@@ -2,14 +2,14 @@
 #define VIEWPANE_H
 
 #include "lgeom.h"
-//#include "house.h"
+#include "house.h"
 #include <vector>
 
 class Viewpane {
 private:
 public:
 	vec3 origin; // will be the center of the viewpane
-    //House house;
+    House house;
 
 	// TODO 
 	// add text indicator to viewpane

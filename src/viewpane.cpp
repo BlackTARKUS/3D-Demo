@@ -1,6 +1,7 @@
 #include "viewpane.h"
-//#include "house.h"
+#include "house.h"
 #include "lgeom.h"
+#include "glFuncs.h"
 
 Viewpane::Viewpane() {
 
