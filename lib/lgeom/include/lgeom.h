@@ -2,7 +2,6 @@
 #define LGEOM_H
 
 #include "lgeom/mat.h"
-#include "lgeom/matfuncs.h"
 #include "lgeom/misc.h"
 #include "lgeom/quat.h"
 #include "lgeom/vec.h"
