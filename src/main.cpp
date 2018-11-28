@@ -14,11 +14,6 @@ void display( void ) {
 	v.render();
 }
 
-void update( void ) {
-	v.update();
-	display();
-}
-
 // relay functions for key handling
 void MouseClicked(int button, int state, int x, int y) { 
 	v.MouseClicked(button, state, x, y); 
@@ -43,7 +38,7 @@ int main(int argc, char** argv) {
 
 	glEnable(GL_DEPTH_TEST);
 	glutDisplayFunc(display);
-	glutIdleFunc(update);
+	glutIdleFunc(display);
 	glutMainLoop();
 }
 

@@ -46,13 +46,12 @@ House::House(vec3 position) : pos(position) {
 	this->Tverts = verts;
 }
 
-// update House with new rotation direction
-void House::update() {
-	this->theta += this->alpha;
-	this->transform = mat4Identity();
-	mat4RotateZ(&this->transform, this->theta); 
-	mat4Translate(&this->transform, this->pos); 
-	this->Tverts = applyTransform(this->transform, this->verts);
+// rotate House with new rotation direction
+void House::rotate(float theta,float x,float y,float z) {
+	glPushMatrix();
+	glRotatef(theta,x,y,z);
+	this->render();
+	glPopMatrix();
 }
 
 void House::render() {

@@ -16,7 +16,6 @@ public:
 
 	Viewpane();
 	void init(int window_width, int window_height);
-	void update();
 	void render();
 
 	void MouseClicked(int button, int state, int x, int y);

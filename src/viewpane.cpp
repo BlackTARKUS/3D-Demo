@@ -32,8 +32,3 @@ void Viewpane::render() {
 	
 	swapBuffers();
 }
-
-void Viewpane::update() {
-	// update the house
-    this->house.update();
-}
