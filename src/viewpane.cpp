@@ -47,6 +47,6 @@ void Viewpane::render() {
 	glEnd();
 
 	// Draw the House
-    //this->house.render();
+    this->house.render();
 	
 }
