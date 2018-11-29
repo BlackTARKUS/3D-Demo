@@ -12,6 +12,17 @@ Viewpane v;
 
 void display( void ) {
 	v.render();
+	glutSwapBuffers();
+}
+
+void reshape( int w, int h ) {
+	glViewport(0, 0, (GLsizei) w, (GLsizei) h); 
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	//gluPerspective(10,10,10,10);
+	glOrtho(-10.0, 10.0, -10.0, 10.0, 1.0, 20.0);
+
+	glMatrixMode (GL_MODELVIEW);
 }
 
 // relay functions for key handling
@@ -38,6 +49,7 @@ int main(int argc, char** argv) {
 
 	glEnable(GL_DEPTH_TEST);
 	glutDisplayFunc(display);
+	glutReshapeFunc(reshape);
 	glutIdleFunc(display);
 	glutMainLoop();
 }

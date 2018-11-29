@@ -6,7 +6,7 @@ void setupGlut( int wpx, int wpy, int wdx, int wdy ) {
 	char *myargv[1] = {(char*)"blank"};
 	glutInit(&myargc, myargv);
 
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(wdx, wdy);
 	glutInitWindowPosition(wpx, wpy);
 	glutCreateWindow("Houses");
