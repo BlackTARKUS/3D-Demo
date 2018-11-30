@@ -5,8 +5,8 @@
 // Specify the values to place and size the window on the screen
 const int WINDOW_POSITION_X = 500;
 const int WINDOW_POSITION_Y = 5;
-const int WINDOW_MAX_X = 1000;
-const int WINDOW_MAX_Y = 1000;
+const int WINDOW_MAX_X = 600;
+const int WINDOW_MAX_Y = 600;
 
 Viewpane v;
 
@@ -19,8 +19,8 @@ void reshape( int w, int h ) {
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h); 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//gluPerspective(10,10,10,10);
-	glOrtho(-10.0, 10.0, -10.0, 10.0, 1.0, 20.0);
+	gluPerspective(80.0,1.0,0.1,100.0);
+	//glOrtho(-1.0, 1.0, -1.0, 1.0, 1.0, 100.0);
 
 	glMatrixMode (GL_MODELVIEW);
 }
