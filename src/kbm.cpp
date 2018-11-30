@@ -25,10 +25,10 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 void Viewpane::KeySpecial(int key, int x, int y) {
 	switch(key){
 	case GLUT_KEY_PAGE_UP: // Move camera closer to house
-		this->zoomScale += 5.0;
+		//extern ZOOMSCALE += 5.0;
 		break;
 	case GLUT_KEY_PAGE_DOWN: // move camera further from house
-		this->zoomScale -= 5.0;
+		//extern ZOOMSCALE -= 5.0;
 		break;
 	}
 }
@@ -42,7 +42,7 @@ void Viewpane::KeyDown(unsigned char key, int x, int y) {
 		// Do Stuff
 		break;
 	case 'R': // Reset house position, size, and camera position and perspective
-		this->zoomScale = 0;
+		//extern ZOOMSCALE = 75;
 		break;
 	case 'q':
 		exit(0);

@@ -10,7 +10,7 @@ public:
 	vec3 theta; // rotation angle
 	float alpha; // rotational velocity
 	std::vector<vec3> V; // polygon vertices
-	
+
 	House();
 	void rotate(float,float,float,float);
 	void colo(int, int&, int&, int&);
@@ -18,4 +18,3 @@ public:
 };
 
 #endif // HOUSE_H
-
