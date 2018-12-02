@@ -1,8 +1,7 @@
 #include <GL/glut.h>
-#include "viewpane.h"
 #include "glFuncs.h"
 #include "globals.h"
-#include <iostream>
+#include "viewpane.h"
 
 void Viewpane::MouseClicked(int button, int state, int x, int y) { 
 	switch(button){
@@ -28,14 +27,12 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 void Viewpane::KeySpecial(int key, int x, int y) {
 	switch(key){
 	case GLUT_KEY_PAGE_UP: // Move camera closer to house
-		std::cout << ZOOMSCALE << std::endl;
 		if(ZOOMSCALE < 175.0) { // Beyond this zoomscale things break 
 			ZOOMSCALE += 5.0;
 		}
 		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 		break;
 	case GLUT_KEY_PAGE_DOWN: // move camera further from house
-		std::cout << ZOOMSCALE << std::endl;
 		if(ZOOMSCALE > 5.0) { // Beyond this zoomscale things break
 			ZOOMSCALE -= 5.0;
 		}

@@ -1,7 +1,7 @@
 #include <GL/glut.h>
 #include "glFuncs.h"
-#include "viewpane.h"
 #include "globals.h"
+#include "viewpane.h"
 
 Viewpane VP;
 

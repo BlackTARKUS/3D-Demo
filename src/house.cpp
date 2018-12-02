@@ -1,6 +1,5 @@
-#include "house.h"
 #include "glFuncs.h"
-#include <stdlib.h>
+#include "house.h"
 
 /* The house is stored as a long series of sequential points in 3D space
  * which are then assembled into polygonal faces by the render function
