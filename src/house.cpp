@@ -6,57 +6,46 @@
  * colors are also assigned by the render function.
 */
 House::House() {
-	// <--------- House Faces ---------> //
-	// Bottom Face
-	this->V.push_back( {-1.0, 0.0, 0.0} );
+	// <--------- Body Faces ---------> //
+	this->V.push_back( {-1.0, 0.0, 0.0} ); /* <[[Bottom Face]]>     */
 	this->V.push_back( {-1.0, 0.0, 1.0} );
 	this->V.push_back( { 1.0, 0.0, 1.0} );
-	this->V.push_back( { 1.0, 0.0, 0.0} );
-	// Back Face
-	this->V.push_back( {-1.0, 0.0, 0.0} );
+	this->V.push_back( { 1.0, 0.0, 0.0} ); /* <- End Face ->        */
+	this->V.push_back( {-1.0, 0.0, 0.0} ); /* <[[Back Face]]>       */
 	this->V.push_back( {-1.0, 1.0, 0.0} );
 	this->V.push_back( { 1.0, 1.0, 0.0} );
-	this->V.push_back( { 1.0, 0.0, 0.0} );
-	// Left Face
-	this->V.push_back( {-1.0, 0.0, 0.0} );
+	this->V.push_back( { 1.0, 0.0, 0.0} ); /* <- End Face ->        */
+	this->V.push_back( {-1.0, 0.0, 0.0} ); /* <[[Left Face]]>       */
 	this->V.push_back( {-1.0, 0.0, 1.0} );
 	this->V.push_back( {-1.0, 1.0, 1.0} );
-	this->V.push_back( {-1.0, 1.0, 0.0} );
-	// Right Face
-	this->V.push_back( { 1.0, 0.0, 0.0} );
+	this->V.push_back( {-1.0, 1.0, 0.0} ); /* <- End Face ->        */
+	this->V.push_back( { 1.0, 0.0, 0.0} ); /* <[[Right Face]]>      */
 	this->V.push_back( { 1.0, 0.0, 1.0} );
 	this->V.push_back( { 1.0, 1.0, 1.0} );
-	this->V.push_back( { 1.0, 1.0, 0.0} );
-	// Front Face
-	this->V.push_back( { 1.0, 1.0, 1.0} );
+	this->V.push_back( { 1.0, 1.0, 0.0} ); /* <- End Face ->        */
+	this->V.push_back( { 1.0, 1.0, 1.0} ); /* <[[Front Face]]>      */
 	this->V.push_back( {-1.0, 1.0, 1.0} );
 	this->V.push_back( {-1.0, 0.0, 1.0} );
-	this->V.push_back( { 1.0, 0.0, 1.0} );
+	this->V.push_back( { 1.0, 0.0, 1.0} ); /* <- End Face ->        */
 	// <--------- Roof  Faces ---------> //
-	// Top Left Face
-	this->V.push_back( {-1.5, 1.0, 0.25} );
+	this->V.push_back( {-1.5, 1.0, 0.25} );	/* <[[Top Left Face]]>  */
 	this->V.push_back( {-1.5, 1.0, 1.25} );
 	this->V.push_back( { 0.0, 1.3, 1.25} );
-	this->V.push_back( { 0.0, 1.3, 0.25} );
-	// Top Right Face
-	this->V.push_back( { 0.0, 1.3, 0.25} );
+	this->V.push_back( { 0.0, 1.3, 0.25} ); /* <- End Face ->       */
+	this->V.push_back( { 0.0, 1.3, 0.25} );	/* <[[Top Right Face]]> */
 	this->V.push_back( { 0.0, 1.3, 1.25} );
 	this->V.push_back( { 1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 0.25} );
-	// Roof Base Face
-	this->V.push_back( {-1.5, 1.0, 0.25} );
+	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
+	this->V.push_back( {-1.5, 1.0, 0.25} );	/* <[[Roof Base Face]]> */
 	this->V.push_back( {-1.5, 1.0, 1.25} );
 	this->V.push_back( { 1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 0.25} );
-	// <------- Triangle  Time! -------> //
-	// Front Triangle
-	this->V.push_back( { 0.0, 1.3, 1.25} );
+	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
+	this->V.push_back( { 0.0, 1.3, 1.25} );	/* <[[Front Triangle]]> */
 	this->V.push_back( {-1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 1.25} );
-	// back Triangle
-	this->V.push_back( { 0.0, 1.3, 0.25} );
+	this->V.push_back( { 1.5, 1.0, 1.25} ); /* <- End Face ->       */
+	this->V.push_back( { 0.0, 1.3, 0.25} );	/* <[[back Triangle]]>  */
 	this->V.push_back( {-1.5, 1.0, 0.25} );
-	this->V.push_back( { 1.5, 1.0, 0.25} );
+	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
 }
 
 // rotate House with new rotation direction
