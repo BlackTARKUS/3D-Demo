@@ -33,11 +33,6 @@ House::House() {
 	this->V.push_back( {-1.0, 1.0, 1.0} );
 	this->V.push_back( {-1.0, 0.0, 1.0} );
 	this->V.push_back( { 1.0, 0.0, 1.0} );
-	// Top Face
-	this->V.push_back( {-1.0, 1.0, 0.0} );
-	this->V.push_back( {-1.0, 1.0, 1.0} );
-	this->V.push_back( { 1.0, 1.0, 1.0} );
-	this->V.push_back( { 1.0, 1.0, 0.0} );
 	// <--------- Roof  Faces ---------> //
 	// Top Left Face
 	this->V.push_back( {-1.5, 1.0, 0.25} );
@@ -104,12 +99,9 @@ void House::colo(int i, int &c1, int &c2, int &c3){
 			c1 = 102; c2 = 51; c3 = 0;
 			break;
 		case 32:
-			c1 = 88; c2 = 69; c3 = 40;
-			break;
-		case 36:
 			c1 = 255; c2 = 255; c3 = 255;
 			break;
-		case 39:
+		case 35:
 			c1 = 88; c2 = 88; c3 = 88;
 			break;
 	}
@@ -123,7 +115,7 @@ void House::render() {
 	glPolygonMode(GL_BACK, GL_FILL);
 
 	// Draw the faces made of squares
-	for(unsigned i=0;i<36;i+=4) {
+	for(unsigned i=0;i<32;i+=4) {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
 		glBegin(GL_POLYGON);
@@ -134,7 +126,7 @@ void House::render() {
 		glEnd();
 	}
 	// Draw the faces made of triangles
-	for(unsigned i=36;i<this->V.size();i+=3) {
+	for(unsigned i=32;i<this->V.size();i+=3) {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
 		glBegin(GL_POLYGON);
