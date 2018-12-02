@@ -10,6 +10,7 @@ private:
 public:
 	vec3 origin; // will be the center of the viewpane
 	House house;
+	float zoomscale;
 
 	// TODO
 	// add text indicator to viewpane

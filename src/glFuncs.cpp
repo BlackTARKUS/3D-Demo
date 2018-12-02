@@ -1,4 +1,5 @@
 #include "glFuncs.h"
+#include "globals.h"
 
 void setupGlut( int wpx, int wpy, int wdx, int wdy ) {
 	// pass dummy args to glutInit
@@ -20,4 +21,14 @@ void setupGL( int wdx, int wdy ) {
 	gluOrtho2D(0.0, wdx, 0.0, wdy);
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glPointSize(2.0);
+}
+
+void reshape( int w, int h ) {
+	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(ZOOMSCALE,1.0,0.1,100.0);
+	//glOrtho(-1.0, 1.0, -1.0, 1.0, 1.0, 100.0);
+
+	glMatrixMode (GL_MODELVIEW);
 }
