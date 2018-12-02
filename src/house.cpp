@@ -73,36 +73,16 @@ void House::rotate(float theta,float x,float y,float z) {
 */
 void House::colo(int i, int &c1, int &c2, int &c3){
 	switch(i){
-		case 0:
-			c1 = 0; c2 = 153; c3 = 255;
-			break;
-		case 4:
-			c1 = 102; c2 = 255; c3 = 153;
-			break;
-		case 8:
-			c1 = 255; c2 = 102; c3 = 102;
-			break;
-		case 12:
-			c1 = 255; c2 = 102; c3 = 255;
-			break;
-		case 16:
-			c1 = 255; c2 = 255; c3 = 102;
-			break;
-		case 20:
-			c1 = 51; c2 = 153; c3 = 51;
-			break;
-		case 24:
-			c1 = 204; c2 = 102; c3 = 153;
-			break;
-		case 28:
-			c1 = 102; c2 = 51; c3 = 0;
-			break;
-		case 32:
-			c1 = 255; c2 = 255; c3 = 255;
-			break;
-		case 35:
-			c1 = 88; c2 = 88; c3 = 88;
-			break;
+		case  0:  c1 =  0;  c2 = 153; c3 = 255; break;
+		case  4:  c1 = 102; c2 = 255; c3 = 153; break;
+		case  8:  c1 = 255; c2 = 102; c3 = 102; break;
+		case 12:  c1 = 255; c2 = 102; c3 = 255; break;
+		case 16:  c1 = 255; c2 = 255; c3 = 102; break;
+		case 20:  c1 =  51; c2 = 153; c3 =  51; break;
+		case 24:  c1 = 204; c2 = 102; c3 = 153; break;
+		case 28:  c1 = 102; c2 =  51; c3 =   0; break;
+		case 32:  c1 = 255; c2 = 255; c3 = 255; break;
+		case 35:  c1 =  88; c2 =  88; c3 =  88; break;
 	}
 }
 
