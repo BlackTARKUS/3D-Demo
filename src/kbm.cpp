@@ -8,12 +8,12 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
-			if(x > 250) {
+			//if(x > 250) {
 				this->house.theta.x += 10.0;
-			}
-			else{
-				this->house.theta.y += 10.0;
-			}
+			//}
+			//else{
+			//	this->house.theta.y += 10.0;
+			//}
 
 		}
 		break;
@@ -53,7 +53,7 @@ void Viewpane::KeyDown(unsigned char key, int x, int y) {
 		// Do Stuff
 		break;
 	case 'R': // Reset house position, size, and camera position and perspective
-		//extern ZOOMSCALE = 75;
+		 ZOOMSCALE = 80;
 		break;
 	case 'q':
 		exit(0);

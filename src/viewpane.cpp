@@ -20,7 +20,7 @@ void Viewpane::render() {
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
 	// Draw the axis
-	float Len = 12.0; // Length of the Axis
+	float Len = 20.0; // Length of the Axis
 	glPointSize(1.0);
 	glColor3ub(255,0,0);
 	glBegin(GL_LINES);
