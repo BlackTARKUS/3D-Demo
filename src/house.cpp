@@ -48,14 +48,6 @@ House::House() {
 	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
 }
 
-// rotate House with new rotation direction
-void House::rotate(float theta,float x,float y,float z) {
-	glPushMatrix();
-	glRotatef(theta,x,y,z);
-	this->render();
-	glPopMatrix();
-}
-
 /* Stores a ton of predefined colours that I have specified ahead of time
  * colo function choses each of these sequentially per face so I could clean
  * the house's positional data up
@@ -103,4 +95,12 @@ void House::render() {
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
 		glEnd();
 	}
+}
+
+// rotate House with new rotation direction
+void House::rotate(float theta,float x,float y,float z) {
+	glPushMatrix();
+	glRotatef(theta,x,y,z);
+	this->render();
+	glPopMatrix();
 }
