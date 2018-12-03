@@ -21,9 +21,9 @@ void Viewpane::render() {
 	drawAxis();
 
 	// Draw Sign
-	//glColor3ub(255,255,255);
-	//glLineWidth(8.0);
-	//renderStrokeFontString( 0.0, 0.0, 0.0, (char*)"Hello World!");
+	glColor3ub(255,255,255);
+	glLineWidth(8.0);
+	renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
 
     this->house.render();
 }
