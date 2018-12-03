@@ -2,13 +2,18 @@
 #include "glFuncs.h"
 #include "globals.h"
 #include "viewpane.h"
+#include "house.h"
+
+#include <iostream>
 
 void Viewpane::MouseClicked(int button, int state, int x, int y) { 
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
+			std::cout << "left mouse pressed" << std::endl;
 			//if(x > 250) {
-				this->house.theta.x += 10.0;
+				this->house.alpha.x += 10.0;
+				SpinDisplay();
 			//}
 			//else{
 			//	this->house.theta.y += 10.0;
@@ -18,6 +23,7 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 		break;
 	case GLUT_MIDDLE_BUTTON:
 		if(state==GLUT_DOWN){
+			std::cout << "middle mouse pressed" << std::endl;
 			// Generate context Menu
 		}
 		break;
@@ -44,13 +50,18 @@ void Viewpane::KeySpecial(int key, int x, int y) {
 void Viewpane::KeyDown(unsigned char key, int x, int y) { 
 	switch(key){
 	case 's': // Stop house animation
+		std::cout << (char)key << " $ pressed" << std::endl;
 		glutIdleFunc(NULL);
 		break;
 	case 'r': // Reset house position and size
-		// Do Stuff
+		std::cout << (char)key << " $ pressed" << std::endl;
+		this->house.theta = {0.0,0.0,0.0};
+		ZOOMSCALE = 80;
 		break;
 	case 'R': // Reset house position, size, and camera position and perspective
-		 ZOOMSCALE = 80;
+		std::cout << (char)key << " $ pressed" << std::endl;
+		this->house.theta = {0.0,0.0,0.0};
+		ZOOMSCALE = 80;
 		break;
 	case 'q':
 		exit(0);

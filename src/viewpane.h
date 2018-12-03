@@ -12,8 +12,7 @@ public:
 	House house;
 	float zoomscale;
 
-	// TODO
-	// add text indicator to viewpane
+	void drawAxis();
 
 	Viewpane();
 	void init(int window_width, int window_height);

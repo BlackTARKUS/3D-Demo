@@ -95,12 +95,16 @@ void House::render() {
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
 		glEnd();
 	}
-}
 
-// rotate House with new rotation direction
-void House::rotate(float theta,float x,float y,float z) {
 	glPushMatrix();
-	glRotatef(theta,x,y,z);
-	this->render();
+	for(unsigned i=0; i<this->V.size(); i++) {
+		glRotatef(this->theta.x,this->V[i].x,this->V[i].y,this->V[i].z);
+	}
+	for(unsigned i=0; i<this->V.size(); i++) {
+		glRotatef(this->theta.y,this->V[i].x,this->V[i].y,this->V[i].z);
+	}
+	for(unsigned i=0; i<this->V.size(); i++) {
+		glRotatef(this->theta.z,this->V[i].x,this->V[i].y,this->V[i].z);
+	}
 	glPopMatrix();
 }

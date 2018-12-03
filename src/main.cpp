@@ -10,6 +10,17 @@ void display( void ) {
 	glutSwapBuffers();
 }
 
+/* Defines the angle at which the polygon is drawn as a function of the previous
+ * angle + the delta value, then posts the polygon for redisplay
+*/
+void SpinDisplay( void ) {
+	VP.house.theta = VP.house.theta + VP.house.alpha;
+	if(VP.house.theta.x > 360.0) {VP.house.theta.x = VP.house.theta.x - 360.0;}
+	if(VP.house.theta.y > 360.0) {VP.house.theta.y = VP.house.theta.y - 360.0;}
+	if(VP.house.theta.z > 360.0) {VP.house.theta.z = VP.house.theta.z - 360.0;}
+	glutPostRedisplay();
+}
+
 // relay functions for key handling
 void MouseClicked(int button, int state, int x, int y) {
 	VP.MouseClicked(button, state, x, y);
@@ -35,7 +46,7 @@ int main(int argc, char** argv) {
 	glEnable(GL_DEPTH_TEST);
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
-	glutIdleFunc(display);
+	glutIdleFunc(SpinDisplay);
 	glutMainLoop();
 }
 
