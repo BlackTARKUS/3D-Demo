@@ -51,17 +51,20 @@ void Viewpane::KeyDown(unsigned char key, int x, int y) {
 	switch(key){
 	case 's': // Stop house animation
 		std::cout << (char)key << " $ pressed" << std::endl;
-		glutIdleFunc(NULL);
+		this->house.theta = {0.0,0.0,0.0};
+		this->house.alpha = {0.0,0.0,0.0};
 		break;
 	case 'r': // Reset house position and size
-		std::cout << (char)key << " $ pressed" << std::endl;
 		this->house.theta = {0.0,0.0,0.0};
 		ZOOMSCALE = 80;
+		glutPostRedisplay();
+		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 		break;
 	case 'R': // Reset house position, size, and camera position and perspective
-		std::cout << (char)key << " $ pressed" << std::endl;
 		this->house.theta = {0.0,0.0,0.0};
 		ZOOMSCALE = 80;
+		glutPostRedisplay();
+		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 		break;
 	case 'q':
 		exit(0);

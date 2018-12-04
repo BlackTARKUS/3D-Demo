@@ -3,6 +3,7 @@
 #include "lgeom.h"
 #include "viewpane.h"
 #include "sign.h"
+#include "globals.h"
 
 Viewpane::Viewpane() {}
 
@@ -21,9 +22,11 @@ void Viewpane::render() {
 	drawAxis();
 
 	// Draw Sign
-	glColor3ub(255,255,255);
-	glLineWidth(8.0);
-	renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
+	//glColor3ub(255,255,255);
+	//glPushMatrix();
+	//glLineWidth(8.0);
+	//renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
+	//glPopMatrix();
 
     this->house.render();
 }
@@ -35,8 +38,12 @@ void Viewpane::drawAxis(){
 
 	// Y Axis
 	glColor3ub(255,0,0);
-	glRasterPos2f(0.1, 2.1);
-	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, 'Y');
+	glPushMatrix();
+	glRotatef(-45, 0, 1.0, 0);
+	glScalef(0.002,0.002,1.0);
+	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"Y" );
+	glPopMatrix();
+
 	glBegin(GL_LINES);
 		glVertex3i(0,Len,0);
 		glVertex3i(0,-Len,0);
@@ -44,8 +51,12 @@ void Viewpane::drawAxis(){
 
 	// Z Axis
 	glColor3ub(0,0,255);
-	glRasterPos2f(28.0, -18.0);
-	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, 'Z');
+	glPushMatrix();
+	glRotatef(-45, 0, 1.0, 0);
+	glScalef(0.00175,0.00175,1.0);
+	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"Z" );
+	glPopMatrix();
+
 	glColor3ub(0,255,0);
 	glBegin(GL_LINES);
 		glVertex3i(Len,0,0);
@@ -54,8 +65,12 @@ void Viewpane::drawAxis(){
 
 	// X Axis
 	glColor3ub(0,255,0);
-	glRasterPos2f(-2.2, -0.18);
-	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, 'X');
+	glPushMatrix();
+	glRotatef(-45, 0, 1.0, 0);
+	glScalef(0.00175,0.00175,1.0);
+	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"X" );
+	glPopMatrix();
+
 	glColor3ub(0,0,255);
 	glBegin(GL_LINES);
 		glVertex3i(0,0,Len);

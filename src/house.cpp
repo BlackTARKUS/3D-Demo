@@ -28,24 +28,24 @@ House::House() {
 	this->V.push_back( {-1.0, 0.0, 1.0} );
 	this->V.push_back( { 1.0, 0.0, 1.0} ); /* <- End Face ->        */
 	// <--------- Roof  Faces ---------> //
-	this->V.push_back( {-1.5, 1.0, 0.25} );	/* <[[Top Left Face]]>  */
-	this->V.push_back( {-1.5, 1.0, 1.25} );
-	this->V.push_back( { 0.0, 1.3, 1.25} );
-	this->V.push_back( { 0.0, 1.3, 0.25} ); /* <- End Face ->       */
-	this->V.push_back( { 0.0, 1.3, 0.25} );	/* <[[Top Right Face]]> */
-	this->V.push_back( { 0.0, 1.3, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
-	this->V.push_back( {-1.5, 1.0, 0.25} );	/* <[[Roof Base Face]]> */
-	this->V.push_back( {-1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
-	this->V.push_back( { 0.0, 1.3, 1.25} );	/* <[[Front Triangle]]> */
-	this->V.push_back( {-1.5, 1.0, 1.25} );
-	this->V.push_back( { 1.5, 1.0, 1.25} ); /* <- End Face ->       */
-	this->V.push_back( { 0.0, 1.3, 0.25} );	/* <[[back Triangle]]>  */
-	this->V.push_back( {-1.5, 1.0, 0.25} );
-	this->V.push_back( { 1.5, 1.0, 0.25} ); /* <- End Face ->       */
+	this->V.push_back( {-1.1, 1.0,-0.1} );	/* <[[Top Left Face]]>  */
+	this->V.push_back( {-1.1, 1.0, 1.1} );
+	this->V.push_back( { 0.0, 1.2, 1.1} );
+	this->V.push_back( { 0.0, 1.2,-0.1} ); /* <- End Face ->       */
+	this->V.push_back( { 0.0, 1.2,-0.1} );	/* <[[Top Right Face]]> */
+	this->V.push_back( { 0.0, 1.2, 1.1} );
+	this->V.push_back( { 1.1, 1.0, 1.1} );
+	this->V.push_back( { 1.1, 1.0,-0.1} ); /* <- End Face ->       */
+	this->V.push_back( {-1.1, 1.0,-0.1} );	/* <[[Roof Base Face]]> */
+	this->V.push_back( {-1.1, 1.0, 1.1} );
+	this->V.push_back( { 1.1, 1.0, 1.1} );
+	this->V.push_back( { 1.1, 1.0,-0.1} ); /* <- End Face ->       */
+	this->V.push_back( { 0.0, 1.2, 1.1} );	/* <[[Front Triangle]]> */
+	this->V.push_back( {-1.1, 1.0, 1.1} );
+	this->V.push_back( { 1.1, 1.0, 1.1} ); /* <- End Face ->       */
+	this->V.push_back( { 0.0, 1.2,-0.1} );	/* <[[back Triangle]]>  */
+	this->V.push_back( {-1.1, 1.0,-0.1} );
+	this->V.push_back( { 1.1, 1.0,-0.1} ); /* <- End Face ->       */
 }
 
 /* Stores a ton of predefined colours that I have specified ahead of time
@@ -79,7 +79,7 @@ void House::render() {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
 		glBegin(GL_POLYGON);
-			glVertex3f(this->V[i].x,this->V[i].y,this->V[i].z);
+			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
 			glVertex3f(this->V[i+3].x,this->V[i+3].y,this->V[i+3].z);
@@ -90,7 +90,7 @@ void House::render() {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
 		glBegin(GL_POLYGON);
-			glVertex3f(this->V[i].x,this->V[i].y,this->V[i].z);
+			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
 		glEnd();
@@ -98,13 +98,13 @@ void House::render() {
 
 	glPushMatrix();
 	for(unsigned i=0; i<this->V.size(); i++) {
-		glRotatef(this->theta.x,this->V[i].x,this->V[i].y,this->V[i].z);
+		glRotatef(this->theta.x,1.0,0.0,0.0);
 	}
 	for(unsigned i=0; i<this->V.size(); i++) {
-		glRotatef(this->theta.y,this->V[i].x,this->V[i].y,this->V[i].z);
+		glRotatef(this->theta.y,0.0,1.0,0.0);
 	}
 	for(unsigned i=0; i<this->V.size(); i++) {
-		glRotatef(this->theta.z,this->V[i].x,this->V[i].y,this->V[i].z);
+		glRotatef(this->theta.z,0.0,0.0,1.0);
 	}
 	glPopMatrix();
 }
