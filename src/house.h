@@ -14,6 +14,7 @@ public:
 	House();
 	void colo(int, int&, int&, int&);
 	void render();
+	void rotate();
 };
 
 #endif // HOUSE_H

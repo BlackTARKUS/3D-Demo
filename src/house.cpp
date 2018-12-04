@@ -1,5 +1,6 @@
 #include "glFuncs.h"
 #include "house.h"
+#include <iostream>
 
 /* The house is stored as a long series of sequential points in 3D space
  * which are then assembled into polygonal faces by the render function
@@ -95,16 +96,12 @@ void House::render() {
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
 		glEnd();
 	}
+}
 
+void House::rotate() {
 	glPushMatrix();
-	for(unsigned i=0; i<this->V.size(); i++) {
-		glRotatef(this->theta.x,1.0,0.0,0.0);
-	}
-	for(unsigned i=0; i<this->V.size(); i++) {
-		glRotatef(this->theta.y,0.0,1.0,0.0);
-	}
-	for(unsigned i=0; i<this->V.size(); i++) {
-		glRotatef(this->theta.z,0.0,0.0,1.0);
-	}
+	glRotatef(this->theta.x,1.0,0.0,0.0);
+	glRotatef(this->theta.y,0.0,1.0,0.0);
+	glRotatef(this->theta.z,0.0,0.0,1.0);
 	glPopMatrix();
 }

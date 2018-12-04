@@ -28,7 +28,7 @@ void Viewpane::render() {
 	//renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
 	//glPopMatrix();
 
-    this->house.render();
+	//this->house.render();
 }
 
 // Draw the axis and lebel them with a bitmap font
@@ -39,9 +39,10 @@ void Viewpane::drawAxis(){
 	// Y Axis
 	glColor3ub(255,0,0);
 	glPushMatrix();
-	glRotatef(-45, 0, 1.0, 0);
-	glScalef((ZOOMSCALE/40000),(ZOOMSCALE/40000),1.0);
-	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"Y" );
+	glTranslatef(0.0, 2.0, 0.2);
+	glRotatef(100.0, 0.0, 1.0, 0.0);
+	glScalef(0.00175,0.00175,1.0);
+	renderStrokeFontString( (char*)"Y" );
 	glPopMatrix();
 
 	glBegin(GL_LINES);
@@ -52,9 +53,10 @@ void Viewpane::drawAxis(){
 	// Z Axis
 	glColor3ub(0,0,255);
 	glPushMatrix();
-	glRotatef(-45, 0, 1.0, 0);
-	glScalef((ZOOMSCALE/40000),(ZOOMSCALE/40000),1.0);
-	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"Z" );
+	glTranslatef(0.2, -0.1, 2.1);
+	glRotatef(-45.0, 0.0, 1.0, 0.0);
+	glScalef(0.00175,0.00175,1.0);
+	renderStrokeFontString( (char*)"Z" );
 	glPopMatrix();
 
 	glColor3ub(0,255,0);
@@ -66,9 +68,10 @@ void Viewpane::drawAxis(){
 	// X Axis
 	glColor3ub(0,255,0);
 	glPushMatrix();
-	glRotatef(-45, 0, 1.0, 0);
-	glScalef((ZOOMSCALE/40000),(ZOOMSCALE/40000),1.0);
-	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"X" );
+	glTranslatef(-2.2, 0.2, 0.2);
+	glRotatef(40.0, 0.0, 1.0, 0.0);
+	glScalef(0.00175,0.00175,1.0);
+	renderStrokeFontString( (char*)"X" );
 	glPopMatrix();
 
 	glColor3ub(0,0,255);

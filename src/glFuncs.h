@@ -7,5 +7,6 @@ void setupGlut( int wpx, int wpy, int wdx, int wdy );
 void setupGL( int wdx, int wdy );
 void reshape( int w, int h );
 void SpinDisplay( void );
+void display( void );
 
 #endif // GLFUNCS_H

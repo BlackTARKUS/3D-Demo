@@ -13,7 +13,7 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 			std::cout << "left mouse pressed" << std::endl;
 			//if(x > 250) {
 				this->house.alpha.x += 10.0;
-				SpinDisplay();
+				glutIdleFunc(SpinDisplay);
 			//}
 			//else{
 			//	this->house.theta.y += 10.0;
@@ -50,9 +50,7 @@ void Viewpane::KeySpecial(int key, int x, int y) {
 void Viewpane::KeyDown(unsigned char key, int x, int y) { 
 	switch(key){
 	case 's': // Stop house animation
-		std::cout << (char)key << " $ pressed" << std::endl;
-		this->house.theta = {0.0,0.0,0.0};
-		this->house.alpha = {0.0,0.0,0.0};
+		glutIdleFunc(display);
 		break;
 	case 'r': // Reset house position and size
 		this->house.theta = {0.0,0.0,0.0};
