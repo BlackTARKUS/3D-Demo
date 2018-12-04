@@ -40,7 +40,7 @@ void Viewpane::drawAxis(){
 	glColor3ub(255,0,0);
 	glPushMatrix();
 	glRotatef(-45, 0, 1.0, 0);
-	glScalef(0.002,0.002,1.0);
+	glScalef((ZOOMSCALE/40000),(ZOOMSCALE/40000),1.0);
 	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"Y" );
 	glPopMatrix();
 
@@ -53,7 +53,7 @@ void Viewpane::drawAxis(){
 	glColor3ub(0,0,255);
 	glPushMatrix();
 	glRotatef(-45, 0, 1.0, 0);
-	glScalef(0.00175,0.00175,1.0);
+	glScalef((ZOOMSCALE/40000),(ZOOMSCALE/40000),1.0);
 	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"Z" );
 	glPopMatrix();
 
@@ -67,7 +67,7 @@ void Viewpane::drawAxis(){
 	glColor3ub(0,255,0);
 	glPushMatrix();
 	glRotatef(-45, 0, 1.0, 0);
-	glScalef(0.00175,0.00175,1.0);
+	glScalef((ZOOMSCALE/40000),(ZOOMSCALE/40000),1.0);
 	renderStrokeFontString( 0.0, 0.0, 1.75, (char*)"X" );
 	glPopMatrix();
 
