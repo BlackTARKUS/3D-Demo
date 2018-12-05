@@ -3,18 +3,18 @@
 # compartamentalized subdirectories for executables and object files
 # commented for maximum understandability explained in easy english
 
-# define a variable name corresponding to a path to a directory
+# define a variable name corresponding to a path to a source_file directory
 SRC_DIR = src
-# define a variable name corresponding to a path to a directory
+# define a variable name corresponding to a path to a object_file directory
 OBJ_DIR = obj
-# define a variable name corresponding to a path to a directory
+# define a variable name corresponding to a path to a bin directory
 BINDIR = bin
 
 # Define the compilers being used for C and C++ files
 CC       = gcc
 # Define the compilers being used for C and C++ files
 CXX      = g++
-# This specifies we will compile with c++11 warn all
+# This specifies we will compile with c++11 warn all flag
 CXXFLAGS = -std=c++11 -Wall
 # This includes the OpenGL libraries
 LDLIBS   = -lglut -lGL -lGLU -lm 
@@ -23,13 +23,19 @@ LDLIBS   = -lglut -lGL -lGLU -lm
 # How to compile all files in /src to /obj and link with /bin
 # https://stackoverflow.com/questions/2908057/can-i-compile-all-cpp-files-in-src-to-os-in-obj-then-link-to-binary-in
 ################################################################################
-# a definition of a shortcut to all .cpp files contained in SRCDR
+# Explanation of wildcard function in GNU make
+# https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html
+################################################################################
+# wildcard is similar to * in many terminal commands and allows us to get all
+# items following certain criteria such as location and filetype.
+# a definition of a shortcut to all *.cpp files contained in SRCDR
 SRCS  := $(wildcard $(SRC_DIR)/*.cpp)
-# a definition of a shortcut to all .h files contained in SRC_DIR
+# a definition of a shortcut to all *.h files contained in SRC_DIR
 HEADERS := $(wildcard $(SRC_DIR)/*.h)
-# a definition of a shortcut to all .o files contained in OBJ_DIR
+# a definition of a shortcut to all *.o files contained in OBJ_DIR
 # all OBJ_DIR files will be named after the corresponding .cpp files which are
-# encapusalated by our defition of SRCS located in SRC_DIR
+# encapusalated by our defition of SRCS located in SRC_DIR to be linked together
+# when we finish compiling
 OBJS  := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 # Defines our executable name
