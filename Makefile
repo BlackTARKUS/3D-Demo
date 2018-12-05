@@ -1,3 +1,8 @@
+# By Cody Lee - Fall 2018
+# a makefile that compiles code located in a source code directory into
+# compartamentalized subdirectories for executables and object files
+# commented for maximum understandability explained in easy english
+
 # define a variable name corresponding to a path to a directory
 SRC_DIR = src
 # define a variable name corresponding to a path to a directory
