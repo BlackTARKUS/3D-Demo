@@ -7,6 +7,9 @@ int WINDOW_MAX_X = 600;
 int WINDOW_MAX_Y = 600;
 
 float ZOOMSCALE = 80;
+int FILLMODE = 1;
+int DRAWAXES = 1;
+int DRAWSIGN = 1;
 
 point THETA = {0.0,0.0,0.0};
 point ALPHA = {0.0,0.0,0.0};

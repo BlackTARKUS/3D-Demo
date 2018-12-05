@@ -20,7 +20,10 @@ void Viewpane::render() {
 
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-	drawAxis(); /* Draws the axis and their labels in the viewport */
+	if(DRAWAXES == 1) {
+		// Draws the axis and their labels in the viewport
+		drawAxis(); 
+	}
 
 	glPushMatrix();
 	this->house.rotate();
@@ -86,8 +89,20 @@ void mainMenuHandler(int choice) {
 
 	switch(choice) {
 		case 1:
+			if(DRAWAXES == 1) {
+				DRAWAXES = 0; glutPostRedisplay();
+			}
+			else {
+				DRAWAXES = 1; glutPostRedisplay();
+			}
 			break;
 		case 2:
+			if(DRAWSIGN == 1) {
+				DRAWSIGN = 0; glutPostRedisplay();
+			}
+			else {
+				DRAWSIGN = 1; glutPostRedisplay();
+			}
 			break;
 		case 3: /* Reset all values back to their initial state */
 			THETA = {0.0,0.0,0.0};
