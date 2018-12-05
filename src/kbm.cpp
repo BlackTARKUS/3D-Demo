@@ -57,7 +57,6 @@ void Viewpane::KeyDown(unsigned char key, int x, int y) {
 	case 'r': // Reset house position and size
 		THETA = {0.0,0.0,0.0};
 		ALPHA = {0.0,0.0,0.0};
-		ZOOMSCALE = 80;
 		glutPostRedisplay();
 		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 		break;
@@ -65,6 +64,7 @@ void Viewpane::KeyDown(unsigned char key, int x, int y) {
 		THETA = {0.0,0.0,0.0};
 		ALPHA = {0.0,0.0,0.0};
 		ZOOMSCALE = 80;
+		VIEWMODE = 0;
 		glutPostRedisplay();
 		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 		break;

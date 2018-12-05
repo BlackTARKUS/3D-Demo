@@ -107,6 +107,7 @@ void mainMenuHandler(int choice) {
 			THETA = {0.0,0.0,0.0};
 			ALPHA = {0.0,0.0,0.0};
 			ZOOMSCALE = 80;
+			VIEWMODE = 0;
 			glutPostRedisplay();
 			reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 			break;
