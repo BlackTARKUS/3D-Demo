@@ -129,9 +129,9 @@ void polygonMenuHandler(int choice) {
 
 	switch(choice) {
 		case 1:
-			break;
+			FILLMODE = GL_LINE_LOOP; glutPostRedisplay(); break;
 		case 2:
-			break;
+			FILLMODE = GL_POLYGON; glutPostRedisplay(); break;
 	}
 }
 
@@ -143,8 +143,8 @@ void initMenu() {
 	glutAddMenuEntry("glCustom", 3);
 
 	int pMenu = glutCreateMenu(polygonMenuHandler);
-	glutAddMenuEntry("Filled Faces", 1);
-	glutAddMenuEntry("Wire Mesh", 2);
+	glutAddMenuEntry("Wire Mesh", 1);
+	glutAddMenuEntry("Filled Faces", 2);
 
 	//add entries to our menu
 	int menu = glutCreateMenu(mainMenuHandler);

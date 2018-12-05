@@ -1,4 +1,5 @@
 #include "globals.h"
+#include <GL/glut.h>
 
 // Specify the values to place and size the window on the screen
 int WINDOW_POSITION_X = 550;
@@ -7,7 +8,7 @@ int WINDOW_MAX_X = 600;
 int WINDOW_MAX_Y = 600;
 
 float ZOOMSCALE = 80;
-int FILLMODE = 1;
+int FILLMODE = GL_POLYGON;
 int DRAWAXES = 1;
 int DRAWSIGN = 1;
 

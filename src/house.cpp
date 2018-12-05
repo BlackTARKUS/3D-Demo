@@ -80,7 +80,7 @@ void House::render() {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
 		//glBegin(FILLMODE);
-		glBegin(GL_POLYGON);
+		glBegin(FILLMODE);
 			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
@@ -92,7 +92,7 @@ void House::render() {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
 		//glBegin(FILLMODE);
-		glBegin(GL_POLYGON);
+		glBegin(FILLMODE);
 			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
