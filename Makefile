@@ -6,7 +6,7 @@
 # define a variable name corresponding to a path to a directory
 SRC_DIR = src
 # define a variable name corresponding to a path to a directory
-OBJDIR = obj
+OBJ_DIR = obj
 # define a variable name corresponding to a path to a directory
 BINDIR = bin
 
@@ -27,10 +27,10 @@ LDLIBS   = -lglut -lGL -lGLU -lm
 SRCS  := $(wildcard $(SRC_DIR)/*.cpp)
 # a definition of a shortcut to all .h files contained in SRC_DIR
 HEADERS := $(wildcard $(SRC_DIR)/*.h)
-# a definition of a shortcut to all .o files contained in OBJDIR
-# all OBJDIR files will be named after the corresponding .cpp files which are
+# a definition of a shortcut to all .o files contained in OBJ_DIR
+# all OBJ_DIR files will be named after the corresponding .cpp files which are
 # encapusalated by our defition of SRCS located in SRC_DIR
-OBJS  := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
+OBJS  := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 # Defines our executable name
 TARGET = demo
@@ -45,25 +45,25 @@ $(BINDIR)/$(TARGET): $(OBJS)
 
 # method explained in line order: 
 # -p creates the intermediate directories for a new directory if they do not already exist.
-# creates a new directory at OBJDIR to hold .o files
+# creates a new directory at OBJ_DIR to hold .o files
 # $@ is the name of the file being generated
 # $< the first prerequisite (usually the source file)
-$(OBJS): $(OBJDIR)/%.o : $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJDIR)
+$(OBJS): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # method explained in line order:
-# removes *.o files such as "src.o" from OBJDIR
+# removes *.o files such as "src.o" from OBJ_DIR
 clean:
-	rm -f $(OBJDIR)/*.o
+	rm -f $(OBJ_DIR)/*.o
 
 # method explained in line order:
 # removes *.out files such as "a.out" from BINDIR
 # removes *.exe files such as "bin.exe" from BINDIR
 # removes TARGET file such as "demo" from BINDIR
-# deletes the OBJDIR which contains .o files
+# deletes the OBJ_DIR which contains .o files
 pristine:
 	rm -f $(BINDIR)/*.out 
 	rm -f $(BINDIR)/*.exe
 	rm -f $(BINDIR)/$(TARGET)
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJ_DIR)
