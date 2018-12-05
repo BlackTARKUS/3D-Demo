@@ -10,14 +10,13 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
-			//if(x > 250) {
+			if(x > 250) {
 				this->house.alpha.x += 1.0;
-				glutIdleFunc(SpinDisplay);
-			//}
-			//else{
-			//	this->house.theta.y += 10.0;
-			//}
-
+			}
+			else{
+				this->house.alpha.y += 1.0;
+			}
+			glutIdleFunc(SpinDisplay);
 		}
 		break;
 	case GLUT_MIDDLE_BUTTON:
