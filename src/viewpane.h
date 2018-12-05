@@ -1,14 +1,14 @@
 #ifndef VIEWPANE_H
 #define VIEWPANE_H
 
-#include "lgeom.h"
+#include "point.h"
 #include "house.h"
 #include <vector>
 
 class Viewpane {
 private:
 public:
-	vec3 origin; // will be the center of the viewpane
+	point origin; // will be the center of the viewpane
 	House house;
 	float zoomscale;
 

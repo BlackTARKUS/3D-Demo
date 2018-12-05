@@ -14,7 +14,9 @@ void display( void ) {
  * angle + the delta value, then posts the polygon for redisplay
 */
 void SpinDisplay( void ) {
-	VP.house.theta = VP.house.theta + VP.house.alpha;
+	VP.house.theta.x = VP.house.theta.x + VP.house.alpha.x;
+	VP.house.theta.y = VP.house.theta.y + VP.house.alpha.y;
+	VP.house.theta.z = VP.house.theta.z + VP.house.alpha.z;
 	if(VP.house.theta.x > 360.0) {VP.house.theta.x = VP.house.theta.x - 360.0;}
 	if(VP.house.theta.y > 360.0) {VP.house.theta.y = VP.house.theta.y - 360.0;}
 	if(VP.house.theta.z > 360.0) {VP.house.theta.z = VP.house.theta.z - 360.0;}

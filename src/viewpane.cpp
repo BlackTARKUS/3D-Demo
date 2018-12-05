@@ -1,6 +1,6 @@
 #include "glFuncs.h"
 #include "house.h"
-#include "lgeom.h"
+#include "point.h"
 #include "viewpane.h"
 #include "sign.h"
 #include "globals.h"
@@ -28,7 +28,7 @@ void Viewpane::render() {
 	//renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
 	//glPopMatrix();
 
-	//this->house.render();
+	this->house.render();
 }
 
 // Draw the axis and lebel them with a bitmap font
