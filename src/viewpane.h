@@ -3,6 +3,7 @@
 
 #include "point.h"
 #include "house.h"
+#include "menu.h"
 #include <vector>
 
 class Viewpane {
@@ -11,6 +12,7 @@ public:
 	point origin; // will be the center of the viewpane
 	House house;
 	float zoomscale;
+	int menuMaster;
 
 	void drawAxis();
 

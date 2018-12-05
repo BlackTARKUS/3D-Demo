@@ -2,6 +2,7 @@
 #include "glFuncs.h"
 #include "globals.h"
 #include "viewpane.h"
+#include "menu.h"
 
 Viewpane VP;
 

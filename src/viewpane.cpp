@@ -10,6 +10,7 @@ Viewpane::Viewpane() {}
 
 void Viewpane::init(int window_width, int window_height) {
 	this->origin = { window_width/2.0f, window_height/2.0f };
+	initMenu();
 }
 
 void Viewpane::render() {
