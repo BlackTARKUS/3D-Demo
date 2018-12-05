@@ -8,6 +8,7 @@ int WINDOW_MAX_X = 600;
 int WINDOW_MAX_Y = 600;
 
 float ZOOMSCALE = 80;
+int VIEWMODE = 0;
 int FILLMODE = GL_POLYGON;
 int DRAWAXES = 1;
 int DRAWSIGN = 1;

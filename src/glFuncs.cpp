@@ -27,8 +27,14 @@ void reshape( int w, int h ) {
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(ZOOMSCALE,1.0,0.1,100.0);
-	//glOrtho(-1.0, 1.0, -1.0, 1.0, 1.0, 100.0);
+	switch(VIEWMODE){
+		case 0:
+			gluPerspective(ZOOMSCALE,1.0,0.1,100.0); break;
+		case 1:
+			glOrtho(-2.0, 2.0, -2.0, 2.0, -1.5, 100.0); break;
+		case 2:
+			break;
+	};
 
 	glMatrixMode (GL_MODELVIEW);
 }

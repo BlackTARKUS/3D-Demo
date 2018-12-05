@@ -9,6 +9,7 @@ extern int WINDOW_MAX_X;
 extern int WINDOW_MAX_Y;
 
 extern float ZOOMSCALE;
+extern int VIEWMODE;
 extern int FILLMODE;
 extern int DRAWAXES;
 extern int DRAWSIGN;

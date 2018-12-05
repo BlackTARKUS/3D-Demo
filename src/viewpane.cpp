@@ -8,7 +8,6 @@ Viewpane::Viewpane() {}
 
 void Viewpane::init(int window_width, int window_height) {
 	this->origin = { window_width/2.0f, window_height/2.0f };
-	initMenu();
 }
 
 void Viewpane::render() {
@@ -117,12 +116,9 @@ void mainMenuHandler(int choice) {
 void viewMenuHandler(int choice) {
 
 	switch(choice) {
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
+		case 1:  VIEWMODE = 0; reshape(WINDOW_MAX_X, WINDOW_MAX_Y); break;
+		case 2:  VIEWMODE = 1; reshape(WINDOW_MAX_X, WINDOW_MAX_Y); break;
+		case 3:  VIEWMODE = 2; reshape(WINDOW_MAX_X, WINDOW_MAX_Y); break;
 	}
 }
 void polygonMenuHandler(int choice) {
