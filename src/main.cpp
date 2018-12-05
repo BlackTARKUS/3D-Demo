@@ -20,7 +20,6 @@ void SpinDisplay( void ) {
 	if(VP.house.theta.x > 360.0) {VP.house.theta.x = VP.house.theta.x - 360.0;}
 	if(VP.house.theta.y > 360.0) {VP.house.theta.y = VP.house.theta.y - 360.0;}
 	if(VP.house.theta.z > 360.0) {VP.house.theta.z = VP.house.theta.z - 360.0;}
-	VP.house.rotate();
 	glutPostRedisplay();
 }
 

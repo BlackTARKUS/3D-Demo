@@ -10,9 +10,8 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
-			std::cout << "left mouse pressed" << std::endl;
 			//if(x > 250) {
-				this->house.alpha.x += 10.0;
+				this->house.alpha.x += 1.0;
 				glutIdleFunc(SpinDisplay);
 			//}
 			//else{
@@ -54,12 +53,14 @@ void Viewpane::KeyDown(unsigned char key, int x, int y) {
 		break;
 	case 'r': // Reset house position and size
 		this->house.theta = {0.0,0.0,0.0};
+		this->house.alpha = {0.0,0.0,0.0};
 		ZOOMSCALE = 80;
 		glutPostRedisplay();
 		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
 		break;
 	case 'R': // Reset house position, size, and camera position and perspective
 		this->house.theta = {0.0,0.0,0.0};
+		this->house.alpha = {0.0,0.0,0.0};
 		ZOOMSCALE = 80;
 		glutPostRedisplay();
 		reshape(WINDOW_MAX_X, WINDOW_MAX_Y);

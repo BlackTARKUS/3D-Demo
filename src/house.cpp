@@ -99,9 +99,7 @@ void House::render() {
 }
 
 void House::rotate() {
-	glPushMatrix();
 	glRotatef(this->theta.x,1.0,0.0,0.0);
 	glRotatef(this->theta.y,0.0,1.0,0.0);
 	glRotatef(this->theta.z,0.0,0.0,1.0);
-	glPopMatrix();
 }

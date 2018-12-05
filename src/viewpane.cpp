@@ -28,7 +28,10 @@ void Viewpane::render() {
 	//renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
 	//glPopMatrix();
 
+	glPushMatrix();
+	this->house.rotate();
 	this->house.render();
+	glPopMatrix();
 }
 
 // Draw the axis and lebel them with a bitmap font
