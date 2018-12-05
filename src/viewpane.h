@@ -3,16 +3,13 @@
 
 #include "point.h"
 #include "house.h"
-#include "menu.h"
 #include <vector>
 
-class Viewpane {
-private:
+struct Viewpane {
 public:
 	point origin; // will be the center of the viewpane
 	House house;
 	float zoomscale;
-	int menuMaster;
 
 	void drawAxis();
 
@@ -24,5 +21,11 @@ public:
 	void KeySpecial(int key, int x, int y);
 	void KeyDown(unsigned char key, int x, int y);
 };
+
+void initMenu();
+void mainMenuHandler(int choice);
+void viewMenuHandler(int choice);
+void polygonMenuHandler(int choice);
+
 
 #endif // VIEWPANE_H

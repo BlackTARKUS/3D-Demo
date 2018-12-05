@@ -1,10 +1,8 @@
 #include "glFuncs.h"
-#include "house.h"
-#include "point.h"
-#include "viewpane.h"
-#include "sign.h"
 #include "globals.h"
-#include "menu.h"
+#include "house.h"
+#include "sign.h"
+#include "viewpane.h"
 
 Viewpane::Viewpane() {}
 
@@ -78,4 +76,70 @@ void Viewpane::drawAxis(){
 		glVertex3i(0,0,Len);
 		glVertex3i(0,0,-Len);
 	glEnd();
+}
+
+///////////////////////////////////////////////////////////////
+// 						Menu Handling					 	 //
+///////////////////////////////////////////////////////////////
+
+void mainMenuHandler(int choice) {
+
+	switch(choice) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3: /* Reset all values back to their initial state */
+			THETA = {0.0,0.0,0.0};
+			ALPHA = {0.0,0.0,0.0};
+			ZOOMSCALE = 80;
+			glutPostRedisplay();
+			reshape(WINDOW_MAX_X, WINDOW_MAX_Y);
+			break;
+		case 4: exit(0); break;
+	}
+}
+void viewMenuHandler(int choice) {
+
+	switch(choice) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+	}
+}
+void polygonMenuHandler(int choice) {
+
+	switch(choice) {
+		case 1:
+			break;
+		case 2:
+			break;
+	}
+}
+
+void initMenu() {
+
+	int vMenu = glutCreateMenu(viewMenuHandler);
+	glutAddMenuEntry("glPerspective", 1);
+	glutAddMenuEntry("glOrtho", 2);
+	glutAddMenuEntry("glCustom", 3);
+
+	int pMenu = glutCreateMenu(polygonMenuHandler);
+	glutAddMenuEntry("Filled Faces", 1);
+	glutAddMenuEntry("Wire Mesh", 2);
+
+	//add entries to our menu
+	int menu = glutCreateMenu(mainMenuHandler);
+	glutAddSubMenu("Viewing mode", vMenu);
+	glutAddMenuEntry("Toggle Axes", 1);
+	glutAddMenuEntry("Toggle Sign", 2);
+	glutAddSubMenu("Polygon Fill Mode", pMenu);
+	glutAddMenuEntry("Reset", 3);
+	glutAddMenuEntry("Quit", 4);
+
+	// attach the menu to the right button
+	glutAttachMenu(GLUT_MIDDLE_BUTTON);
 }

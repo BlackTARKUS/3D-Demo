@@ -1,4 +1,5 @@
 #include "glFuncs.h"
+#include "globals.h"
 #include "house.h"
 
 /* The house is stored as a long series of sequential points in 3D space
@@ -100,7 +101,7 @@ void House::render() {
 }
 
 void House::rotate() {
-	glRotatef(this->theta.x,1.0,0.0,0.0);
-	glRotatef(this->theta.y,0.0,1.0,0.0);
-	glRotatef(this->theta.z,0.0,0.0,1.0);
+	glRotatef(THETA.x,1.0,0.0,0.0);
+	glRotatef(THETA.y,0.0,1.0,0.0);
+	glRotatef(THETA.z,0.0,0.0,1.0);
 }

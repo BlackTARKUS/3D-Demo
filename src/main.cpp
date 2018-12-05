@@ -2,7 +2,6 @@
 #include "glFuncs.h"
 #include "globals.h"
 #include "viewpane.h"
-#include "menu.h"
 
 Viewpane VP;
 
@@ -15,12 +14,12 @@ void display( void ) {
  * angle + the delta value, then posts the polygon for redisplay
 */
 void SpinDisplay( void ) {
-	VP.house.theta.x = VP.house.theta.x + VP.house.alpha.x;
-	VP.house.theta.y = VP.house.theta.y + VP.house.alpha.y;
-	VP.house.theta.z = VP.house.theta.z + VP.house.alpha.z;
-	if(VP.house.theta.x > 360.0) {VP.house.theta.x = VP.house.theta.x - 360.0;}
-	if(VP.house.theta.y > 360.0) {VP.house.theta.y = VP.house.theta.y - 360.0;}
-	if(VP.house.theta.z > 360.0) {VP.house.theta.z = VP.house.theta.z - 360.0;}
+	THETA.x = THETA.x + ALPHA.x;
+	THETA.y = THETA.y + ALPHA.y;
+	THETA.z = THETA.z + ALPHA.z;
+	if(THETA.x > 360.0) {THETA.x = THETA.x - 360.0;}
+	if(THETA.y > 360.0) {THETA.y = THETA.y - 360.0;}
+	if(THETA.z > 360.0) {THETA.z = THETA.z - 360.0;}
 	glutPostRedisplay();
 }
 
@@ -41,6 +40,7 @@ int main(int argc, char** argv) {
 	);
 
 	VP.init(WINDOW_MAX_X, WINDOW_MAX_Y);
+	initMenu();
 
 	glutMouseFunc(MouseClicked);
 	glutSpecialFunc(KeySpecial);

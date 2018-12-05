@@ -8,4 +8,5 @@ int WINDOW_MAX_Y = 600;
 
 float ZOOMSCALE = 80;
 
-
+point THETA = {0.0,0.0,0.0};
+point ALPHA = {0.0,0.0,0.0};

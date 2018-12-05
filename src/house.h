@@ -7,8 +7,6 @@
 class House {
 private:
 public:
-	point theta; // rotation angle
-	point alpha; // rotational velocity
 	std::vector<point> V; // polygon vertices as vector
 
 	House();
