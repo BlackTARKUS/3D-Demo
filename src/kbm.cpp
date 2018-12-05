@@ -11,21 +11,22 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
 			if(y > (WINDOW_MAX_Y/2)) {
-				this->house.alpha.z += 1.0;
+				if(this->house.alpha.z < 10.0) {
+					this->house.alpha.z += 1.0;	
+				}
+				
 			}
 			else if(x > (WINDOW_MAX_X/2) ) {
-				this->house.alpha.x += 1.0;
+				if(this->house.alpha.x < 10.0) {
+					this->house.alpha.x += 1.0;	
+				}
 			}
 			else{
-				this->house.alpha.y += 1.0;
+				if(this->house.alpha.y < 10.0) {
+					this->house.alpha.y += 1.0;	
+				}
 			}
 			glutIdleFunc(SpinDisplay);
-		}
-		break;
-	case GLUT_MIDDLE_BUTTON:
-		if(state==GLUT_DOWN){
-			std::cout << "middle mouse pressed" << std::endl;
-			// Generate context Menu
 		}
 		break;
 	}

@@ -4,6 +4,7 @@
 #include "viewpane.h"
 #include "sign.h"
 #include "globals.h"
+#include "menu.h"
 
 Viewpane::Viewpane() {}
 
@@ -14,19 +15,13 @@ void Viewpane::init(int window_width, int window_height) {
 void Viewpane::render() {
 
 	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity ();
-	gluLookAt (-2.25, 1.5, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	glLoadIdentity();
+	// Positions our camera at an angle to view our 3D space
+	gluLookAt(-2.25, 1.5, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-	drawAxis();
-
-	// Draw Sign
-	//glColor3ub(255,255,255);
-	//glPushMatrix();
-	//glLineWidth(8.0);
-	//renderStrokeFontString( -1.5, 1.25, 1.25, (char*)"Hello World!");
-	//glPopMatrix();
+	drawAxis(); /* Draws the axis and their labels in the viewport */
 
 	glPushMatrix();
 	this->house.rotate();

@@ -1,6 +1,6 @@
 #include "glFuncs.h"
 #include "house.h"
-#include <iostream>
+//#include "menu.h"
 
 /* The house is stored as a long series of sequential points in 3D space
  * which are then assembled into polygonal faces by the render function
@@ -79,6 +79,7 @@ void House::render() {
 	for(unsigned i=0;i<32;i+=4) {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
+		//glBegin(FILLMODE);
 		glBegin(GL_POLYGON);
 			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
@@ -90,6 +91,7 @@ void House::render() {
 	for(unsigned i=32;i<this->V.size();i+=3) {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
+		//glBegin(FILLMODE);
 		glBegin(GL_POLYGON);
 			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
