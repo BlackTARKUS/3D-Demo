@@ -10,7 +10,10 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
-			if(x > 250) {
+			if(y > (WINDOW_MAX_Y/2)) {
+				this->house.alpha.z += 1.0;
+			}
+			else if(x > (WINDOW_MAX_X/2) ) {
 				this->house.alpha.x += 1.0;
 			}
 			else{
