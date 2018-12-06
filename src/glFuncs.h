@@ -11,5 +11,6 @@ void SpinDisplay( void );
 void display( void );
 float getSign(point a, point b, point c);
 int pointInTriangle(int x, int y);
+void renderStrokeFontString(char *string);
 
 #endif // GLFUNCS_H

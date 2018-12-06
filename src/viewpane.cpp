@@ -1,7 +1,6 @@
 #include "glFuncs.h"
 #include "globals.h"
 #include "house.h"
-#include "sign.h"
 #include "viewpane.h"
 
 Viewpane::Viewpane() {}

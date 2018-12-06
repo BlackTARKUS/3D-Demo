@@ -39,6 +39,13 @@ void reshape( int w, int h ) {
 	glMatrixMode (GL_MODELVIEW);
 }
 
+// Render a string as a stroke font in 3D space
+void renderStrokeFontString(char *string) {
+	char *c;
+	for (c=string; *c != '\0'; c++) {
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, *c);
+	}
+}
 
 //////////////////////////////////////////////////////
 // determine if point is in triangle

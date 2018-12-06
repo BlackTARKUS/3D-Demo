@@ -79,7 +79,6 @@ void House::render() {
 	for(unsigned i=0;i<32;i+=4) {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
-		//glBegin(FILLMODE);
 		glBegin(FILLMODE);
 			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
@@ -91,12 +90,22 @@ void House::render() {
 	for(unsigned i=32;i<this->V.size();i+=3) {
 		colo(i,c1,c2,c3);
 		glColor3ub(c1,c2,c3);
-		//glBegin(FILLMODE);
 		glBegin(FILLMODE);
 			glVertex3f(this->V[i].x,  this->V[i].y,  this->V[i].z);
 			glVertex3f(this->V[i+1].x,this->V[i+1].y,this->V[i+1].z);
 			glVertex3f(this->V[i+2].x,this->V[i+2].y,this->V[i+2].z);
 		glEnd();
+	}
+
+	if(DRAWSIGN == 1){
+		glColor3ub(255,255,255);
+		glPushMatrix();
+		glTranslatef(-0.75, 1.08, -0.025);
+		glRotatef(-90.0, 0.0, 1.0, 0.0);
+		glRotatef(-80.0, 1.0, 0.0, 0.0);
+		glScalef(0.00175,0.00175,1.0);
+		renderStrokeFontString( (char*)"HelloWorld!" );
+		glPopMatrix();
 	}
 }
 
