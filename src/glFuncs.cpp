@@ -1,5 +1,6 @@
 #include "glFuncs.h"
 #include "globals.h"
+#include <math.h>
 
 void setupGlut( int wpx, int wpy, int wdx, int wdy ) {
 	// pass dummy args to glutInit
@@ -23,17 +24,37 @@ void setupGL( int wdx, int wdy ) {
 	glPointSize(2.0);
 }
 
+// Alternative to gluPerspective
+void glCustom(GLfloat fovy, GLfloat aspect, GLfloat zNear, GLfloat zFar) {
+
+	GLfloat m[16] = {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+					 0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
+	float xmax = zFar + zNear;
+	float xmin = zNear - zFar;
+
+	// determines xmax using the tangent of the horizontal FOV and pi/360
+	float f = atan(fovy/2);
+
+	m[0]  = f/aspect;
+	m[5]  = f;
+	m[10] = xmax/xmin;
+	m[11] = (2*xmax)/xmin;
+	m[14] = -1.0;
+
+	glLoadMatrixf(m);
+}
+
 void reshape( int w, int h ) {
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	switch(VIEWMODE){
 		case 0:
-			gluPerspective(ZOOMSCALE,1.0,0.1,100.0); break;
+			gluPerspective(ZOOMSCALE,1.0,0.1,100.0);     break;
 		case 1:
-			glOrtho(-2.0, 2.0, -2.0, 2.0, -1.5, 100.0); break;
+			glOrtho(-2.0, 2.0, -2.0, 2.0, -1.5, 100.0);  break;
 		case 2:
-			break;
+			glCustom(ZOOMSCALE,1.0,0.1,100.0);           break;
 	};
 
 	glMatrixMode (GL_MODELVIEW);
