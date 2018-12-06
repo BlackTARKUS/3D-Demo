@@ -15,7 +15,7 @@ CC       = gcc
 # Define the compilers being used for C and C++ files
 CXX      = g++
 # This specifies we will compile with c++11 warn all flag
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++11
 # This includes the OpenGL libraries
 LDLIBS   = -lglut -lGL -lGLU -lm 
 

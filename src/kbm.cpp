@@ -12,7 +12,6 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 				if(ALPHA.z < 10.0) {
 					ALPHA.z += 1.0;	
 				}
-				
 			}
 			else if(x > (WINDOW_MAX_X/2) ) {
 				if(ALPHA.x < 10.0) {
@@ -22,6 +21,26 @@ void Viewpane::MouseClicked(int button, int state, int x, int y) {
 			else{
 				if(ALPHA.y < 10.0) {
 					ALPHA.y += 1.0;	
+				}
+			}
+			glutIdleFunc(SpinDisplay);
+		}
+		break;
+	case GLUT_RIGHT_BUTTON:
+		if(state==GLUT_DOWN){
+			if(pointInTriangle(x,y)) {
+				if(ALPHA.z > 0.0) {
+					ALPHA.z -= 1.0;	
+				}
+			}
+			else if(x > (WINDOW_MAX_X/2) ) {
+				if(ALPHA.x > 0.0) {
+					ALPHA.x -= 1.0;	
+				}
+			}
+			else{
+				if(ALPHA.y > 0.0) {
+					ALPHA.y -= 1.0;	
 				}
 			}
 			glutIdleFunc(SpinDisplay);
