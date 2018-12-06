@@ -4,13 +4,11 @@
 #include "viewpane.h"
 #include "house.h"
 
-#include <iostream>
-
 void Viewpane::MouseClicked(int button, int state, int x, int y) { 
 	switch(button){
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_DOWN){
-			if(y > (WINDOW_MAX_Y/2)) {
+			if(pointInTriangle(x,y)) {
 				if(ALPHA.z < 10.0) {
 					ALPHA.z += 1.0;	
 				}

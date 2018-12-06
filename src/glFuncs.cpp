@@ -38,3 +38,24 @@ void reshape( int w, int h ) {
 
 	glMatrixMode (GL_MODELVIEW);
 }
+
+
+//////////////////////////////////////////////////////
+// determine if point is in triangle
+// https://stackoverflow.com/questions/2049582/how-to-determine-if-a-point-is-in-a-2d-triangle
+//////////////////////////////////////////////////////
+float getSign(point a, point b, point c) {
+	return ( (c.x - b.x) * (a.y - b.y) - (a.x -  b.x) * (c.y - b.y) );
+}
+// Used to check if mouse coords are inside of the triangle at the base of VP
+int pointInTriangle(int x, int y) {
+	point p = {(float)x, (float)y, 0.0};
+	point a = {0.0,(float)WINDOW_MAX_Y,0.0};
+	point b = {(float)WINDOW_MAX_X,(float)WINDOW_MAX_Y,0.0};
+	point c = {(float)(WINDOW_MAX_X/2),(float)(WINDOW_MAX_Y/2),0.0};
+	float ABP = getSign(a,b,p);
+	float BCP = getSign(b,c,p);
+	float CAP = getSign(c,a,p);
+	// if Z components match, then the mouse is in the triangle
+	return (ABP>0 && BCP>0 && CAP>0) || (ABP<0 && BCP<0 && CAP<0);
+}
