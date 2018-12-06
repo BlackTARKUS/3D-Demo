@@ -4,14 +4,15 @@
 #include <GL/glut.h>
 #include "point.h"
 
-void setupGlut( int wpx, int wpy, int wdx, int wdy );
-void setupGL( int wdx, int wdy );
-void reshape( int w, int h );
-void SpinDisplay( void );
+float getSign( point a, point b, point c );
+int pointInTriangle( int x, int y );
 void display( void );
-float getSign(point a, point b, point c);
-int pointInTriangle(int x, int y);
-void renderStrokeFontString(char *string);
-void glCustom(GLfloat, GLfloat, GLfloat, GLfloat);
+void glCustom( GLfloat, GLfloat, GLfloat, GLfloat );
+void renderBitmapFontString( char *string );
+void renderStrokeFontString( char *string );
+void reshape( int w, int h );
+void setupGL( int wdx, int wdy );
+void setupGlut( int wpx, int wpy, int wdx, int wdy );
+void SpinDisplay( void );
 
 #endif // GLFUNCS_H

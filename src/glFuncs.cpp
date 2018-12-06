@@ -48,13 +48,20 @@ void reshape( int w, int h ) {
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
+
 	switch(VIEWMODE){
 		case 0:
-			gluPerspective(ZOOMSCALE,1.0,0.1,100.0);     break;
+			gluPerspective(ZOOMSCALE,1.0,0.1,100.0);
+			glutPostRedisplay();
+			break;
 		case 1:
-			glOrtho(-2.0, 2.0, -2.0, 2.0, -1.5, 100.0);  break;
+			glOrtho(-3.0, 3.0, -3.0, 3.0, 0.0, 100.0);
+			glutPostRedisplay();
+			break;
 		case 2:
-			glCustom(ZOOMSCALE,1.0,0.1,100.0);           break;
+			glCustom(ZOOMSCALE,1.0,0.1,100.0);
+			glutPostRedisplay();
+			break;
 	};
 
 	glMatrixMode (GL_MODELVIEW);
@@ -65,6 +72,15 @@ void renderStrokeFontString(char *string) {
 	char *c;
 	for (c=string; *c != '\0'; c++) {
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, *c);
+	}
+}
+// Render a string as a bitmap font overlayed on top of our 3D space
+void renderBitmapFontString(char *string) {
+	glColor3ub(255,255,255);
+	glRasterPos2f(2.0, 2.3);
+	char *c;
+	for(c=string; *c != '\0'; c++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
 	}
 }
 

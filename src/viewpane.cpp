@@ -23,6 +23,16 @@ void Viewpane::render() {
 		drawAxis(); 
 	}
 
+	// Draws a label of the current viewmode
+	switch(VIEWMODE){
+		case 0:
+			renderBitmapFontString( (char*)"gluPerspective" );  break;
+		case 1:
+			renderBitmapFontString( (char*)"glOrtho" );         break;
+		case 2:
+			renderBitmapFontString( (char*)"glCustom" );        break;
+	};
+
 	glPushMatrix();
 	this->house.rotate();
 	this->house.render();
@@ -38,7 +48,7 @@ void Viewpane::drawAxis(){
 	glColor3ub(255,0,0);
 	glPushMatrix();
 	glTranslatef(0.0, 2.0, 0.2);
-	glRotatef(100.0, 0.0, 1.0, 0.0);
+	glRotatef(-35.0, 0.0, 1.0, 0.0);
 	glScalef(0.00175,0.00175,1.0);
 	renderStrokeFontString( (char*)"Y" );
 	glPopMatrix();
@@ -52,7 +62,7 @@ void Viewpane::drawAxis(){
 	glColor3ub(0,0,255);
 	glPushMatrix();
 	glTranslatef(0.2, -0.1, 2.1);
-	glRotatef(-45.0, 0.0, 1.0, 0.0);
+	glRotatef(-35.0, 0.0, 1.0, 0.0);
 	glScalef(0.00175,0.00175,1.0);
 	renderStrokeFontString( (char*)"Z" );
 	glPopMatrix();
@@ -67,7 +77,7 @@ void Viewpane::drawAxis(){
 	glColor3ub(0,255,0);
 	glPushMatrix();
 	glTranslatef(-2.2, 0.2, 0.2);
-	glRotatef(40.0, 0.0, 1.0, 0.0);
+	glRotatef(-35.0, 0.0, 1.0, 0.0);
 	glScalef(0.00175,0.00175,1.0);
 	renderStrokeFontString( (char*)"X" );
 	glPopMatrix();
